@@ -13,10 +13,18 @@ app.use(bodyParser.urlencoded({ extended: true})); // parse URL-encoded bodies (
 app.use(express.static("public")); // serve static files from 'pUblic' folder (HRML, CSS, JS)
 
 //connect to MongoDB (make sure MongoDB is installed and is running locally on port 27017)
-mongoose.connect("mongodb://localhost:27017/todoDB", {
+
+/* mongoose.connect("mongodb://localhost:27017/todoDB", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+});*/
+
+mongoose.connect("mongodb+srv://duncanowino_db_user:rYQyisdc2ZJU0U8U@cluster0.dpy2a8r.mongodb.net/todoDB?retryWrites=true&w=majority&appName=Cluster0", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
+
+
 
 // Add a new task
 app.post("/add", async(req, res) => {
