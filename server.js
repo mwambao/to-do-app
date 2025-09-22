@@ -24,7 +24,11 @@ mongoose.connect("mongodb+srv://duncanowino_db_user:rYQyisdc2ZJU0U8U@cluster0.dp
   useUnifiedTopology: true,
 });
 
-
+// Get all tasks (used by frontend to load the list)
+app.get("/tasks", async(req, res) => {
+    const tasks = await Task.find(); // Fetch all records from DB
+    res.json(tasks); //send tasks as JSON
+})
 
 // Add a new task
 app.post("/add", async(req, res) => {

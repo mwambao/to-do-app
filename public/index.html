@@ -14,7 +14,33 @@
         <button type="submit">Add</button>
     </form>
 
+    <!-- Task list will be loaded here dynamicallz -->
     <ul id="task-list"></ul>
+
+    <script>
+        //load tasks from server and and display them
+        async function loadTasks() {
+            //fetch tasks from /tasks endpoint
+            const res = await fetch("/tasks");
+            const tasks = await res.json();
+
+            //get <ul> element
+            const list = document.getElementById("task-list");
+            list.innerHTML= ""; // clear list before adding new items
+        
+            //loop through tasks and add them to the list
+            tasks.forEach(t => {
+                list.innerHTML += `
+                <li>
+                  ${t.name}  
+                </li>
+                `  
+            });
+        }
+
+        loadTasks();
+
+    </script>
     
 
 </body>
