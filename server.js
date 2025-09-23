@@ -37,6 +37,12 @@ app.post("/add", async(req, res) => {
     res.redirect("/"); // Redirect back to homepage
 })
 
+
+app.post("/delete", async(req, res) => {
+    await Task.findByIdAndDelete(req.body.id); // delete task by its id
+    res.redirect("/"); // Redirect back to homepage
+});
+
 app.listen(PORT, () => console.log(`Server runing at http://localhost:${PORT}`));
 
 

@@ -33,6 +33,12 @@
                 list.innerHTML += `
                 <li>
                   ${t.name}  
+                  <!-- Delete button: sends POST request to /delete with task ID -->
+                  <form action="/delete" method="POST" style="display:inline;">
+                    <input type="hidden" name="id" value="${t.id}">
+                        <button type="submit">X</button>
+                    </input>
+                  </form>
                 </li>
                 `  
             });
