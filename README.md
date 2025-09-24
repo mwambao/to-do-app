@@ -1,4 +1,4 @@
-# to-do-app
+# To-Do app
 This is my to-do app to add and delete tasks.
 
 I used below tech-stack:
