@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>To-Do List</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
                   ${t.name}  
                   <!-- Delete button: sends POST request to /delete with task ID -->
                   <form action="/delete" method="POST" style="display:inline;">
-                    <input type="hidden" name="id" value="${t.id}">
+                    <input type="hidden" name="id" value="${t._id}">
                         <button type="submit">X</button>
                     </input>
                   </form>
@@ -44,6 +45,7 @@
             });
         }
 
+        // Loads tasks as soon as the page opens
         loadTasks();
 
     </script>

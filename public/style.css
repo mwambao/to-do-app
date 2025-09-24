@@ -1,0 +1,37 @@
+/* Basic page styling*/
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+}
+
+/* Form styling*/
+form {
+    margin: 20px 0;
+}
+
+/* input field styling*/
+
+input {
+    padding: 8px;
+    width: 200px;
+}
+
+/* Button styling*/
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Task list styling*/
+ul {
+    list-style: none; // remove bullets
+    padding: 0;
+}
+
+/* Each task item*/
+li {
+    margin: 10px 0;
+    font-size: 18px;
+}
